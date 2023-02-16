@@ -1,0 +1,20 @@
+<p>directives works!</p>
+<div>
+    <table>
+        <tr *ngFor="let d of myData">
+            <td>{{d.sid}}</td>
+            <td>{{d.name}}</td>
+            <td>{{d.location}}</td>
+        </tr>
+    </table>
+</div>
+
+<!-- CONDITION RENDERING THE COMPONENT -->
+<div>
+    Are you and experienced professional?
+    <input type="checkbox" (change)="status()">
+    <div *ngIf="checked">
+        <label>Enter Years of exp: </label>
+        <input type="text">
+    </div>
+</div>

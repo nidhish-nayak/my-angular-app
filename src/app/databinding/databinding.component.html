@@ -1,0 +1,24 @@
+<p>databinding works!</p>
+<h1>Welcome to {{course}}</h1>
+<p [style.color]="fontColorTheme">My font color theme</p>
+<h2 [align]="alignments">My alignments to center</h2>
+<button (click)="sendMsg()">click me</button> <!--event binding--><!--two-way binding--><!--step 1-->
+<div>
+    <h4>Two - way binding</h4>
+    Enter UserName: <input type="text" [(ngModel)]="uname">
+    <!--FormsModule-app.module.ts (import statement on the top)-->
+    The user name which is entered is {{uname}}
+</div>
+
+<!-- FORMS ADDRESS CHECKER -->
+<div class="myAddress">
+    <button class="myButton" [style.background]="buttonColor">{{myStatus}}</button> Is your present address same as
+    permanent
+    address ?
+    <div>Enter Present Address:
+        <input type="text" [(ngModel)]="presentAddress" (ngModelChange)="valuechange($event)">
+    </div>
+    <div>Enter Present Address:
+        <input type="text" [(ngModel)]="permanentAddress" (ngModelChange)="valuechange($event)">
+    </div>
+</div>
